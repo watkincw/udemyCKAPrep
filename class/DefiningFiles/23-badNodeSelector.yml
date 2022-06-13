@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-1
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx-box
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+    disktype: hdd
+
+# This pod assumes there is a node with a node with a label key/value pair of 'disktype=hdd'.
+# If there isn't one, this pod will remain in a pending state, searching for a node with that label.

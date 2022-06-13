@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  APP_COLOR: blue
+  APP_MOD: prod
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-06-09T17:00:10Z"
+  name: app-config
+  namespace: default
+  resourceVersion: "63039"
+  uid: 4d9f2be1-e1b5-45fe-bce0-afcfb29e288d

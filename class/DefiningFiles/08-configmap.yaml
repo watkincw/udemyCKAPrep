@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dapi-test-pod
+spec:
+  containers:
+    - name: test-container
+      image: nginx
+      env:
+        #Define the environment variable
+        - name: MARS_NAME
+          valueFrom:
+            configMapKeyRef:
+              # The ConfigMap containing the value you want to assign to MARS_NAME
+              name: mars-config-map
+              # Specify the key associated with the value
+              key: application
+        - name: PYTHON_NAME
+          valueFrom:
+            configMappKeyRef:
+              name: mars-config-map2
+              key: application
+  restartPolicy: Never

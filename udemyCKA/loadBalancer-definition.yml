@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  type: LoadBalancer
+  ports:
+  - targetPort: 80
+    port: 80
+    nodePort: 30008
+
+  # Only change here is spec.type(LoadBalancer).
+  # ONLY WORKS WITH SUPPORTED CLOUD PLATFORMS
+    # - GCP
+    # - AWS
+    # - Azure
+  
+  # If you set type to LoadBalancer in an un-supported playform, it will have the same effect as NodePort.

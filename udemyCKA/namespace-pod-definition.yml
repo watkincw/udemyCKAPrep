@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  # In order to specify the namespace in which this pod is created,
+  namespace:  # add the name of the namespace you want this pod created in. (If it doesn't exist, will it create a new namespace?)
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers: #List/Array
+    - name: nginx-container
+      image: nginx
+

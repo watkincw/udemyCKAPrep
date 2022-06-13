@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: task-pv-pod
+spec:
+  containers:
+    - name: task-pc-container
+      image: nginx
+      volumeMonts:
+        - name: task-pv-storage
+          mountPath: /demo-pv
+  volumes:
+    - name: task-pc-storage
+      persistentVolumeClaim:
+        claimName: task-pv-claim
